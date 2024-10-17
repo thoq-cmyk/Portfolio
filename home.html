@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Word Puzzle</title>
+    <style>
+    
+      .white1 {
+        background-color: coral;
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        border-collapse: collapse;
+        border: 1px solid black;
+        text-align: center;
+      }
+      .white2 {
+        background-color: transparent;
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        border-collapse: collapse;
+        border: 1px solid transparent;
+        text-align: center;
+      }
+      
+      table {
+        max-width: 200%;
+        cursor: context-menu;
+        justify-content: center;
+        padding: 40px;
+        margin-left: 40%;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <div>
+<h3>crossword puzzle<h3>
+    <li> 
+        three theather perfromances can be described as .....
+    </li>
+    <li>
+         a wide .....
+    </li>
+    <li>
+        if you can't hide what can you do ...
+    </li>
+</div>
+
+
+
+    <table class="table1">
+      <!-- this is the first line it is PLAYS.-->
+      <tr>
+        <td id="a1" class="white1"></td>
+        <td id="a2" class="white1"></td>
+        <td id="a3" class="white1"></td>
+        <td id="a4" class="white1"></td>
+        <td id="a5" class="white1"></td>
+      </tr>
+      <!--R (a>r<rays)-->
+      <tr>
+        <td id="" class="white2"></td>
+        <td id="" class="white2"></td>
+        <td id="a6" class="white1"></td>
+        <td class="white2"></td>
+        <td class="white2"></td>
+      </tr>
+      <!--second R (ar>r<ays)-->
+      <tr>
+        <td class="white2"></td>
+        <td class="white2"></td>
+        <td id="a7" class="white1"></td>
+        <td id="a12" class="white1"></td>
+        <td id="a13" class="white1"></td>
+      </tr>
+      <!--this is the second A (ARR>A<YS)-->
+      <tr>
+        <td class="white2"></td>
+        <td class="white2"></td>
+        <td id="a8" class="white1"></td>
+        <td class="white2"></td>
+        <td class="white2"></td>
+      </tr>
+      <!--this is Y (ARRA>Y<S)-->
+      <tr>
+        <td class="white2"></td>
+        <td class="white2"></td>
+        <td id="a9" class="white1"></td>
+        <td class="white2"></td>
+        <td class="white2"></td>
+      </tr>
+      <tr>
+        <td class="white2"></td>
+        <td class="white2"></td>
+        <td class="white2"></td>
+        <td class="white2"></td>
+        <td class="white2"></td>
+      </tr>
+    </table>
+
+    <input type="text" id="input1" placeholder="Enter word..." /><br />
+    <button onclick="submit1()">Submit</button>
+
+    <script>
+      var list1 = ["plays", "array", "run"];
+      var letters1 = [
+        "P",
+        "L",
+        "A",
+        "Y",
+        "S",
+        "A",
+        "R",
+        "R",
+        "A",
+        "Y",
+        "R",
+        "U",
+        "N",
+      ];
+
+      function submit1() {
+        var enterWord = document
+          .getElementById("input1")
+          .value.trim()
+          .toLowerCase();
+
+        if (enterWord === list1[0]) {
+          document.getElementById("a1").innerHTML = letters1[0];
+          document.getElementById("a2").innerHTML = letters1[1];
+          document.getElementById("a3").innerHTML = letters1[2];
+          document.getElementById("a4").innerHTML = letters1[3];
+          document.getElementById("a5").innerHTML = letters1[4];
+        } else if (enterWord === list1[1]) {
+          document.getElementById("a3").innerHTML = letters1[5];
+          document.getElementById("a6").innerHTML = letters1[6];
+          document.getElementById("a7").innerHTML = letters1[7];
+          document.getElementById("a8").innerHTML = letters1[8];
+          document.getElementById("a9").innerHTML = letters1[9];
+        } else if (enterWord === list1[2]) {
+          document.getElementById("a7").innerHTML = letters1[10];
+          document.getElementById("a12").innerHTML = letters1[11];
+          document.getElementById("a13").innerHTML = letters1[12];
+        }
+      }
+    </script>
+  </body>
+</html>
